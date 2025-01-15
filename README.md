@@ -1,84 +1,108 @@
-# Turborepo starter
+# Turborepo Shadcn, Prisma, and Recoil Starter
 
-This is an official starter Turborepo.
+This repository is a monorepo setup using Turborepo, designed to streamline the development of modern web applications. It includes a Next.js application, a shared UI component library, and a database layer using Prisma. The project is configured with TypeScript, ESLint, Prettier, and Tailwind CSS for a robust development experience.
 
-## Using this example
+## Table of Contents
 
-Run the following command:
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Scripts](#scripts)
+- [Configuration](#configuration)
+- [Utilities](#utilities)
+- [Remote Caching](#remote-caching)
+- [Useful Links](#useful-links)
 
-```sh
-npx create-turbo@latest
+## Getting Started
+
+To get started with this project, clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/UmangDalvadi/turborepo-prisma-shadcn-starter
+cd turborepo-prisma-shadcn-starter
+yarn install
 ```
 
-## What's inside?
+### Development
+
+To start the development server for all apps and packages, run:
+
+```bash
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+### Build
+
+To build all apps and packages, run:
+
+```bash
+yarn build
+```
+
+## Project Structure
 
 This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- **`apps/web`**: A Next.js application.
+- **`packages/ui`**: A shared React component library using Shadcn.
+- **`packages/db`**: A Prisma-based database layer.
+- **`packages/store`**: A state management library using Recoil.
+- **`packages/eslint-config`**: Shared ESLint configurations.
+- **`packages/typescript-config`**: Shared TypeScript configurations.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Scripts
 
-### Utilities
+Each package/app has its own set of scripts defined in their respective `package.json` files. Here are some common scripts:
 
-This Turborepo has some additional tools already setup for you:
+- **`yarn dev`**: Start the development server.
+- **`yarn build`**: Build the application for production.
+- **`yarn lint`**: Run ESLint to check for code quality issues.
+- **`yarn format`**: Format code using Prettier.
+- **`yarn db:migrate:deploy`**: Deploy database migrations using Prisma.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+## Configuration
 
-### Build
+### TypeScript
 
-To build all apps and packages, run the following command:
+The project uses a shared TypeScript configuration located in `packages/typescript-config`.
 
-```
-cd my-turborepo
-pnpm build
-```
+### ESLint
 
-### Develop
+ESLint configurations are shared across the monorepo and can be found in `packages/eslint-config`.
 
-To develop all apps and packages, run the following command:
+### Tailwind CSS
 
-```
-cd my-turborepo
-pnpm dev
-```
+Tailwind CSS is configured in `packages/ui` and is used across the project for styling.
 
-### Remote Caching
+## Utilities
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+This Turborepo setup includes:
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- **TypeScript** for static type checking.
+- **ESLint** for code linting.
+- **Prettier** for code formatting.
+- **Turborepo** for managing monorepo tasks and caching.
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+## Remote Caching
 
-```
-cd my-turborepo
+Turborepo supports remote caching to share build artifacts across machines. To enable remote caching, authenticate with Vercel:
+
+```bash
 npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
 npx turbo link
 ```
 
 ## Useful Links
 
-Learn more about the power of Turborepo:
+- [Turborepo Documentation](https://turbo.build/repo/docs)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [Recoil Documentation](https://recoiljs.org/docs/introduction/installation)
+- [Shadcn Documentation](https://ui.shadcn.com/docs)
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+## License
+
+This project is licensed under the MIT License.
