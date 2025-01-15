@@ -1,5 +1,5 @@
 {
-  "name": "UD",
+  "name": "@paytm/ud",
   "private": true,
   "scripts": {
     "build": "turbo build",
